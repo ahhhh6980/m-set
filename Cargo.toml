@@ -1,0 +1,29 @@
+[package]
+name = "m-set"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+image = "0.24.5"
+linya = "0.3.0"
+paste = "1.0.11"
+png = "0.17.5"
+rand = "0.8.5"
+rayon = "1.6.1"
+tinyvec = "1.6.0"
+
+[profile.dev]
+lto="fat"
+strip = "symbols"
+debug = false
+panic = "abort"
+
+[profile.release]
+# opt-level = 3
+# lto = "fat"
+# codegen-units = 1
+strip = "symbols"
+debug = false
+panic = "abort"
